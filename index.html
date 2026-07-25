@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fatima Jan Sewa Kendra - Aadhaar Print System</title>
+
+<link rel="stylesheet" href="css/upload.css">
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+<header class="header">
+
+<div class="logo-area">
+
+<h1>Fatima Jan <span>Sewa Kendra</span></h1>
+
+<p>Professional Aadhaar Card Print System</p>
+
+</div>
+
+</header>
+
+<div class="modeBox">
+
+<button id="idMode" class="mode active">
+🪪 ID Card
+</button>
+
+<button id="docMode" class="mode">
+📄 Document
+</button>
+
+</div>
+
+<section class="upload-section">
+
+<!-- FRONT -->
+
+<div class="card-box" id="frontCard">
+
+<h2 id="frontTitle">Front Aadhaar</h2>
+
+<div class="upload-box" id="frontBox">
+
+<img
+id="frontPreview"
+class="preview-image"
+src=""
+alt="Front Preview"
+draggable="false"
+>
+
+<div
+class="placeholder"
+id="frontPlaceholder"
+>
+
+<div class="upload-icon">📄</div>
+
+<h3 id="frontText">Upload Front Side</h3>
+
+<p>Click Here To Select Image</p>
+
+</div>
+
+<input
+type="file"
+id="frontInput"
+accept="image/*"
+hidden>
+
+</div>
+
+</div>
+
+<!-- BACK -->
+
+<div class="card-box" id="backCard">
+
+<h2 id="backTitle">Back Aadhaar</h2>
+
+<div class="upload-box" id="backBox">
+
+<img
+id="backPreview"
+class="preview-image"
+src=""
+alt="Back Preview"
+draggable="false"
+>
+
+<div
+class="placeholder"
+id="backPlaceholder"
+>
+
+<div class="upload-icon">📄</div>
+
+<h3 id="backText">Upload Back Side</h3>
+
+<p>Click Here To Select Image</p>
+
+</div>
+
+<input
+type="file"
+id="backInput"
+accept="image/*"
+hidden>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="action-area">
+
+<button
+id="continueBtn"
+disabled>
+
+Continue →
+
+</button>
+
+</div>
+
+<footer class="footer">
+
+<div class="footer-box">
+
+<span>
+
+© 2026 Fatima Jan Sewa Kendra
+
+</span>
+
+<span>
+
+Professional Aadhaar Print Software
+
+</span>
+
+</div>
+
+</footer>
+
+</div>
+
+<script src="js/upload.js"></script>
+
+</body>
+
+</html>

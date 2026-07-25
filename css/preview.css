@@ -1,0 +1,158 @@
+/* ======================================================== */
+/* FATIMA JAN SEWA KENDRA - PROFESSIONAL PREVIEW & PRINT ENGINE */
+/* ======================================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f3f5f9;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:1100px;
+    padding:20px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.cards{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px;
+flex-wrap:nowrap;
+}
+
+.aadhaar{
+width:3.4in;
+height:2.3in;
+object-fit:cover;
+display:block;
+border-radius:6px;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+background:#fff;
+}
+
+.aadhaar.document{
+width:210mm;
+height:auto;
+object-fit:contain;
+}
+
+.buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+button{
+padding:12px 28px;
+font-size:17px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+color:#fff;
+}
+
+#backBtn{
+background:#666;
+}
+
+#printBtn{
+background:#0b74ff;
+}
+
+button:hover{
+opacity:.9;
+}
+
+@media(max-width:950px){
+.cards{
+flex-direction:column;
+}
+.aadhaar{
+width:90%;
+max-width:430px;
+}
+}
+
+/* ======================================================== */
+/* FIXED PRINT CONFIGURATION (TOP 1 INCH FORCE) */
+/* ======================================================== */
+
+@page {
+    size: A4 portrait;
+    margin: 0 !important; /* ब्राउज़र मार्जिन को ज़ीरो करके हम खुद पोजीशन तय करेंगे */
+}
+
+@media print {
+    html, body {
+        width: 210mm;
+        height: auto !important; /* फिक्स हाइट हटाई ताकि बीच में न लटके */
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff;
+        display: block !important;
+    }
+
+    .buttons {
+        display: none !important;
+    }
+
+    /* मुख्य कंटेनर को जबरन पेज के टॉप पर लॉक करना */
+    .container {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        
+        position: absolute !important;
+        top: 1in !important; /* ऊपर से बिल्कुल 1 इंच की दूरी */
+        left: 0 !important;
+    }
+
+    /* फ्रंट और बैक कार्ड्स को एक सीध में रखने के लिए */
+    .cards {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important; /* बीच में अगल-बगल रखेगा */
+        align-items: flex-start !important; /* ऊपर से सटाकर रखेगा */
+        gap: 12mm !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* ID CARD PRINT SIZE */
+    .aadhaar {
+        width: 3.3in !important;
+        height: 2.2in !important;
+        object-fit: contain !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* DOCUMENT MODE PRINT SIZE */
+    .aadhaar.document {
+        width: 190mm !important;
+        height: auto !important;
+        max-height: 250mm !important;
+        object-fit: contain !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
